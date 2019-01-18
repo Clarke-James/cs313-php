@@ -1,0 +1,77 @@
+a {
+    color:darkgreen;
+    text-decoration:none;
+   
+}
+
+nav {
+    background-color: gray;
+    font-family: Lucida Console, Monaco, monospace;
+    font-size:25px;
+    overflow:hidden;
+    padding-left:4%;
+}
+nav ul {
+    padding:0;
+    margin:0;
+}
+nav ul li {
+    list-style-type:none;
+    float:left;
+    position:relative;
+    padding:0;
+    margin:0;
+}
+nav ul li a {
+    display:block;
+    color:#fff;
+    padding:14px 16px;
+    margin:0;
+}
+nav ul li a:hover {
+    background-color:dimgrey;
+    color:#fff;
+    text-decoration:none;
+    font-weight:normal;
+}
+/* CSS for Nav bar adapted from https://www.w3schools.com/bootstrap/bootstrap_navbar.asp and https://www.sitepoint.com/community/t/how-to-call-a-menu-file-with-php/242421 */
+
+#title {
+  text-align: center;
+  text-transform: uppercase;
+  color:blue;
+}
+#pen {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 57%;
+}
+
+#text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+body {
+    background-color: burlywood;
+}
+
+.store {
+    list-style-type:none;
+}
+
+#links {
+    color:firebrick;
+    font-family: Lucida Console, Monaco, monospace;
+    font-size:20px;
+}
+
+#links ul li a:hover {
+    background-color:dimgrey;
+    color:#fff;
+    text-decoration:none;
+    font-weight:normal;
+}
