@@ -1,0 +1,151 @@
+a {
+    color:darkgreen;
+    text-decoration:none;
+
+}
+
+nav {
+    background-color: gray;
+    font-family: Lucida Console, Monaco, monospace;
+    font-size:25px;
+    overflow:hidden;
+    padding-left:4%;
+}
+nav ul {
+    padding:0;
+    margin:0;
+}
+nav ul li {
+    list-style-type:none;
+    float:left;
+    position:relative;
+    padding:0;
+    margin:0;
+}
+nav ul li a {
+    display:block;
+    color:#fff;
+    padding:14px 16px;
+    margin:0;
+}
+nav ul li a:hover {
+    background-color:dimgrey;
+    color:#fff;
+    text-decoration:none;
+    font-weight:normal;
+}
+/* CSS for Nav bar adapted from https://www.w3schools.com/bootstrap/bootstrap_navbar.asp and
+https://www.sitepoint.com/community/t/how-to-call-a-menu-file-with-php/242421 */
+
+#cartItemName{
+    list-style-type: none;
+}
+
+#image1 {
+  position: relative;
+  left: 100px;
+}
+#image2 {
+  position: relative;
+  left: 100px;
+}
+#image3 {
+  position: relative;
+  left: 100px;
+}
+#image4 {
+  position: relative;
+  left: 100px;
+}
+#checkBox1 {
+  position: absolute;
+  top: 200px;  
+  left: 450px;
+  font-family: Lucida Console, Monaco, monospace;
+}
+#checkBox2 { 
+  position: absolute;
+  top: 400px;  
+  left: 450px;
+  font-family: Lucida Console, Monaco, monospace;
+}
+#checkBox3 {
+   position: absolute;
+  top: 700px;  
+  left: 450px;
+  font-family: Lucida Console, Monaco, monospace;    
+}
+#checkBox4 {
+   position: absolute;
+  top: 900px;  
+  left: 450px; 
+  font-family: Lucida Console, Monaco, monospace;
+}
+#title {
+  text-align: center;
+  text-transform: uppercase;
+  color:blue;
+}
+
+#sendCart {
+  position: absolute;
+  top: 1000px;  
+  left: 450px;
+  padding:25px
+}
+
+body {
+    background-color: burlywood;
+}
+
+#itemNames {
+  position: relative;
+  left: 100px; 
+  padding: 15px;
+}
+#checkOut {
+  padding: 35px;
+  position: relative;
+  left: 140px; 
+}
+#backProduct {
+  padding: 15px;
+  position: relative;
+  left: 250px; 
+}
+#confirmation {
+  margin: 10px;
+  position: relative;
+  left: 350px; 
+}
+#conSubmit {
+  position: relative;
+  left: 450px; 
+}
+input[type=email]{
+  width: 25%;
+  margin: 15px 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=text]{
+  width: 25%;
+  margin: 15px 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;  
+}
+input[type=text]:focus {
+  border: 3px solid #555;
+  
+}
+#back2Cart {
+  padding: 25px;
+  position: relative;
+  left: 410px;
+  
+}
+#rtnCart{
+   color:black;    
+}
