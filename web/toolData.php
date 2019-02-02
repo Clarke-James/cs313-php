@@ -27,10 +27,6 @@ catch (PDOException $ex)
 echo 'Error!: ' . $ex->getMessage();
 die();
 }
-?>
-
-
-<?php
 
 echo "Database output";
 $stmt = $db->prepare('SELECT * FROM bushings WHERE bushingId=:bushing_id AND bushingName=:bushing_name');
