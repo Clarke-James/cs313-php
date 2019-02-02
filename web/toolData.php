@@ -38,6 +38,15 @@ $stmt = $db->prepare('SELECT * FROM bushings WHERE bushingId=:bushing_id AND bus
 $stmt->execute(array(':bushingName' => $bushingName, ':bushingId' => $bushingId));
        // ':partNumber' => $partNumber, ':manufacturer' => $manufacturer,  ':pictureName' => $pictureName//));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($db->query('SELECT bushing_id, bushing_name FROM bushings') as $row)
+{
+    echo 'Bushing ID: ' . $row['bushing_id'];
+    echo ' Bushing Name: ' . $row['bushing_name'];
+    echo '<br/>';
+}
 ?>
+
+
 </body>
 </html>
