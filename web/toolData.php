@@ -65,8 +65,9 @@ $stmt->bindValue(':bushing_id', $bushing_id, PDO::PARAM_INT);
 $stmt->bindValue(':bushing_name', $bushing_name, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo $rows;
 ?>
-?>
+
 
 
 
