@@ -49,10 +49,11 @@ foreach ($db->query('SELECT bushing_id, bushing_name, part_number, manufacturer,
     echo '  Picture: ' . $row['picture_name'];
     echo '<br/>';
 }
+
 echo '<br/>';
-foreach ($db->query('SELECT location_id, location_type, location FROM location') as $row)
+foreach ($db->query('SELECT bushing_id, location_type, location FROM location') as $row)
 {
-    echo 'Location ID: ' . $row['location_id'];
+    echo 'Bushing ID: ' . $row['bushing_id'];
     echo '  Location Type: ' . $row['location_type'];
     echo '  Location: ' . $row['location'];
     echo '<br/>';
