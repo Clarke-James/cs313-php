@@ -60,19 +60,11 @@ foreach ($db->query('SELECT bushing_id, location_type, location FROM location') 
 }
 
 echo '<br/>';
-foreach ($db->query('SELECT * FROM bushings AS b JOIN location AS l ON b.bushing_id = l.bushing_id;') as $row)
-{
-    echo 'Bushing ID: ' . $row['b.bushing_id'];
-    echo '  Bushing Name: ' . $row['b.bushing_name'];
-    echo '  Part Number: ' . $row['b.part_number'];
-    echo '  Manufacturer: ' . $row['b.manufacturer'];
-    echo '  Picture: ' . $row['b.picture_name'];
-
-    echo ' Location Bushing ID: ' . $row['l.bushing_id'];
-    echo '  Location Type: ' . $row['l.location_type'];
-    echo '  Location: ' . $row['l.location'];
-    echo '<br/>';
-}
+$stmt = $db->prepare('SELECT * FROM bushings WHERE bushing_id=:bushing_id AND bushing_name=:bushing_name');
+$stmt->bindValue(':bushing_id', $bushing_id, PDO::PARAM_INT);
+$stmt->bindValue(':bushing_name', $bushing_name, PDO::PARAM_STR);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 ?>
 
