@@ -32,33 +32,27 @@
 <div id="dbOutput">
 <?php
 include "./db_connect.php";
+echo '<table>';
+echo '<tr><th>Bushing ID</th><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
 
 foreach ($db->query('SELECT bushing_id, bushing_name, part_number, manufacturer, picture_name FROM bushings') as $row)
 {
-    echo 'Bushing ID: ' . $row['bushing_id'];
-    echo '  Bushing Name: ' . $row['bushing_name'];
-    echo '  Part Number: ' . $row['part_number'];
-    echo '  Manufacturer: ' . $row['manufacturer'];
-    echo '  Picture: ' . $row['picture_name'];
-    echo '<br/>';
+    echo '<tr>';
+    echo '<td>' . $row['bushing_id'] . '</td>';
+    echo '<td>' . $row['bushing_name'] . '</td>';
+    echo '<td>' . $row['part_number'] . '</td>';
+    echo '<td>' . $row['manufacturer'] . '</td>';
 }
 
-echo '<br/>';
-foreach ($db->query('SELECT bushing_id, location_type, location FROM location') as $row)
+foreach ($db->query('SELECT location_type, location FROM location') as $rows)
 {
-    echo 'Bushing ID: ' . $row['bushing_id'];
-    echo '  Location Type: ' . $row['location_type'];
-    echo '  Location: ' . $row['location'];
-    echo '<br/>';
+    echo '<td>' . $rows['location_type'] . '</td>';
+    echo '<td>' . $rows['location'] . '</td>';
+    echo '</tr> ';
 }
 
-echo '<br/>';
-$stmt = $db->prepare('SELECT * FROM bushings WHERE bushing_id=:bushing_id AND bushing_name=:bushing_name');
-$stmt->bindValue(':bushing_id', $bushing_id, PDO::PARAM_INT);
-$stmt->bindValue(':bushing_name', $bushing_name, PDO::PARAM_STR);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $rows[0];
+echo '</table>'
+
 ?>
 
 </div>
