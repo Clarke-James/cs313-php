@@ -35,8 +35,7 @@ include "./db_connect.php";
 echo '<table>';
 echo '<tr><th>Bushing ID</th><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
 
-foreach ($db->query('SELECT bushing_id, bushing_name, part_number, manufacturer, picture_name, location_type, location 
-FROM bushings, location') as $row)
+foreach ($db->query('SELECT bushing_id, bushing_name, part_number, manufacturer, picture_name, location_type, location FROM bushings CROSS JOIN location') as $row)
 {
     echo '<tr>';
     echo '<td>' . $row['bushing_id'] . '</td>';
