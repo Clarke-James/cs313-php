@@ -17,6 +17,7 @@
     </form>
 </div>
 <div id="formInput">
+    <p>Input new part.</p>
     <form method="post" action="">
         <input type="text" name="part_name" placeholder="Part Name"><br>
         <input type="text" name="part_number" placeholder="Part Number"><br>
@@ -46,14 +47,6 @@ foreach ($db->query('SELECT * FROM bushings AS b  JOIN location AS l ON b.bushin
     echo '<td>' . $row['location'] . '</td>';
     echo '</tr>';
 }
-
-//foreach ($db->query('SELECT location_type, location FROM location') as $rows)
-//{
-//    echo '<td>' . $rows['location_type'] . '</td>';
- //   echo '<td>' . $rows['location'] . '</td>';
-
-//}
-//echo '</tr> ';
 echo '</table>'
 
 ?>
