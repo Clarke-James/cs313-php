@@ -17,7 +17,7 @@ body {
 }
 #dbOutput{
     position: absolute;
-    top: 100px;
+    top: 125px;
     left: 500px;
 }
 
@@ -46,4 +46,18 @@ input[type=search]{
     border-radius: 4px;
     resize: vertical;
     font-size: medium;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+}
+
+th {
+    height: 25px;
 }
