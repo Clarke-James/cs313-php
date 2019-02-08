@@ -34,23 +34,27 @@
 include "./db_connect.php";
 echo '<table>';
 echo '<tr><th>Bushing ID</th><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
-echo '<tr>';
-foreach ($db->query('SELECT bushing_id, bushing_name, part_number, manufacturer, picture_name FROM bushings') as $row)
-{
 
+foreach ($db->query('SELECT bushing_id, bushing_name, part_number, manufacturer, picture_name, location_type, location 
+FROM bushings, location') as $row)
+{
+    echo '<tr>';
     echo '<td>' . $row['bushing_id'] . '</td>';
     echo '<td>' . $row['bushing_name'] . '</td>';
     echo '<td>' . $row['part_number'] . '</td>';
     echo '<td>' . $row['manufacturer'] . '</td>';
+    echo '<td>' . $row['location_type'] . '</td>';
+    echo '<td>' . $row['location'] . '</td>';
+    echo '</tr>';
 }
 
-foreach ($db->query('SELECT location_type, location FROM location') as $rows)
-{
-    echo '<td>' . $rows['location_type'] . '</td>';
-    echo '<td>' . $rows['location'] . '</td>';
+//foreach ($db->query('SELECT location_type, location FROM location') as $rows)
+//{
+//    echo '<td>' . $rows['location_type'] . '</td>';
+ //   echo '<td>' . $rows['location'] . '</td>';
 
-}
-echo '</tr> ';
+//}
+//echo '</tr> ';
 echo '</table>'
 
 ?>
