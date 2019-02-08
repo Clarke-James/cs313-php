@@ -18,7 +18,7 @@ body {
 #dbOutput{
     position: absolute;
     top: 125px;
-    left: 500px;
+    left: 550px;
 }
 
 input[type=text]:focus {
