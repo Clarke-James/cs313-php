@@ -1,4 +1,6 @@
-<?php include "./navbar.php"; ?>
+<?php
+include "./navbar.php"; 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,7 @@
 </head>
 <body>
 <div id="formSearch">
-    <form method="post" action="">
+    <form method="post" action="toolItem.php">
         <input type="search" name="part_number" placeholder="Search Part Number"><br>
         <input type="radio" name="location_type" value="1"> Show all owned by James<br>
         <input type="radio" name="location_type" value="2" > Show all owned by Richard<br>
