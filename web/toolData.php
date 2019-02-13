@@ -15,7 +15,7 @@ include "./navbar.php";
         <input type="search" name="part_number" placeholder="Search Part Number"><br>
         <input type="radio" name="location_type" value="1"> Show all owned by James<br>
         <input type="radio" name="location_type" value="2" > Show all owned by Richard<br>
-        <input type="button" name="submit" formaction="toolItem.php"> >
+        <input type="submit" name="submit" formaction="toolItem.php">
     </form>
 </div>
 <div id="formInput">
