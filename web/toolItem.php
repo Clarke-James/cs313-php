@@ -39,7 +39,7 @@ echo '<table>';
 echo '<tr><th>Bushing ID</th><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
 
     
-    foreach ($db->query('SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id WHERE location_type($locType)') as $row)
+    foreach ($db->query('SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id WHERE location_type = $locType') as $row)
 {
     echo '<tr>';
     echo '<td>' . $row['bushing_id'] . '</td>';
