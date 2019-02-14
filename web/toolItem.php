@@ -28,7 +28,7 @@ include "./db_connect.php";
             echo '<tr><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
 
             foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
-          WHERE part_number = '$partNumber'")as $rows)
+                WHERE part_number = '$partNumber'")as $rows)
             {
                 echo '<tr>';
                 echo '<td>' . $rows['bushing_name'] . '</td>';
@@ -41,7 +41,7 @@ include "./db_connect.php";
             echo '</table>';
         }
         else {
-            echo "Part not found in database.";
+            echo 'Part not found in database.';
         }
         ?>
     </div>
