@@ -24,19 +24,24 @@ include "./db_connect.php";
         <?php
         if (isset ($_POST['part_number'])){
         //echo $partNumber;
+            echo '<table>';
+            echo '<tr><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
+
             foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
-          WHERE part_number = '$partNumber'")as $row)
+          WHERE part_number = '$partNumber'")as $rows)
             {
                 echo '<tr>';
-                echo '<td>' . $row['bushing_id'] . '</td>';
-                echo '<td>' . $row['bushing_name'] . '</td>';
-                echo '<td>' . $row['part_number'] . '</td>';
-                echo '<td>' . $row['manufacturer'] . '</td>';
-                echo '<td>' . $row['location_type'] . '</td>';
-                echo '<td>' . $row['location'] . '</td>';
+                echo '<td>' . $rows['bushing_name'] . '</td>';
+                echo '<td>' . $rows['part_number'] . '</td>';
+                echo '<td>' . $rows['manufacturer'] . '</td>';
+                echo '<td>' . $rows['location_type'] . '</td>';
+                echo '<td>' . $rows['location'] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';
+        }
+        else {
+            echo "Part not found in database.";
         }
         ?>
     </div>
