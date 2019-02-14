@@ -24,10 +24,19 @@ include "./db_connect.php";
         <?php
         if (isset ($_POST['part_number'])){
         //echo $partNumber;
-            $stmt = $db->query("SELECT * FROM bushings AS b JOIN location AS l ON b.bushing_id = l.bushing_id 
-          WHERE part_number = '$partNumber'");
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            echo $results;
+            foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
+          WHERE part_number = '$partNumber'")as $row)
+            {
+                echo '<tr>';
+                echo '<td>' . $row['bushing_id'] . '</td>';
+                echo '<td>' . $row['bushing_name'] . '</td>';
+                echo '<td>' . $row['part_number'] . '</td>';
+                echo '<td>' . $row['manufacturer'] . '</td>';
+                echo '<td>' . $row['location_type'] . '</td>';
+                echo '<td>' . $row['location'] . '</td>';
+                echo '</tr>';
+            }
+            echo '</table>';
         }
         ?>
     </div>
