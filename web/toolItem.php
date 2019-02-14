@@ -23,7 +23,7 @@ include "./db_connect.php";
     <div id="searchOutput">
         <?php
         if (isset ($_POST['part_number'])){
-        echo $_POST['part_number'];
+        echo $partNumber;
 
 
         }
