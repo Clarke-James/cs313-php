@@ -15,7 +15,7 @@ include "./navbar.php";
         <input type="search" name="part_number" placeholder="Search Part Number"><br>
         <input type="radio" name="location_type" value="1"> Show all owned by James<br>
         <input type="radio" name="location_type" value="2" > Show all owned by Richard<br>
-        <input type="submit" name="submit" formaction="toolItem.php">
+        <input type="submit" value="Search" formaction="toolItem.php">
     </form>
 </div>
 <div id="formInput">
@@ -28,7 +28,7 @@ include "./navbar.php";
         <input type="radio" name="location_type" value="1"> Owned by James<br>
         <input type="radio" name="location_type" value="2" > Owned by Richard<br>
         <input type="text" name="location" placeholder="Location"><br>
-        <input type="button" name="Add Item" formaction="toolItem.php">
+        <input type="submit" value="Add Item" formaction="toolAdd.php">
     </form>
 </div>
 
