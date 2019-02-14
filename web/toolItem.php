@@ -29,7 +29,7 @@ include "./db_connect.php";
             foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
                 WHERE part_number = '$partNumber'")as $rows)
             {
-                if (!isset($rows['partNumber'])){
+                if (!$rows){
                 echo 'Part not found in database.';
             }
                 echo 'Name: ' . $rows['bushing_name'] . '<br>';
