@@ -28,7 +28,7 @@ include "./navbar.php";
         <input type="radio" name="location_type" value="1"> Owned by James<br>
         <input type="radio" name="location_type" value="2" > Owned by Richard<br>
         <input type="text" name="location" placeholder="Location"><br>
-        <input type="submit" name="Add Item" formaction="toolItem.php">
+        <input type="button" name="Add Item" formaction="toolItem.php">
     </form>
 </div>
 
