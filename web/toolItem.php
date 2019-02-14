@@ -29,18 +29,17 @@ include "./db_connect.php";
             foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
                 WHERE part_number = '$partNumber'")as $rows)
             {
-
+                if ($rows['partNumber'] != $partNumber){
+                    echo 'Part not found in database.';
+                }
                 echo 'Name: ' . $rows['bushing_name'] . '<br>';
                 echo 'Part Number: ' . $rows['part_number'] . '<br>';
                 echo 'Manufacturer: ' . $rows['manufacturer'] . '<br>';
                 echo 'Owner: ' . $rows['location_type'] . '<br>';
                 echo 'Location: ' . $rows['location'] . '<br>';
                 echo '<img src = "/images/' . $rows['picture_name'] . '"><br>';
-            }
 
-        }
-        else {
-            echo 'Part not found in database.';
+            }
         }
         ?>
     </div>

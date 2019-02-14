@@ -24,7 +24,7 @@ include "./navbar.php";
         <input type="text" name="part_name" placeholder="Part Name"><br>
         <input type="text" name="part_number" placeholder="Part Number"><br>
         <input type="text" name="manufacturer" placeholder="Manufacturer Name"><br>
-        <input type="text" name="picture_name" placeholder="Image Name (jpg)"><br>
+        <input type="text" name="picture_name" placeholder="Image Name (part number.jpg)"><br>
         <input type="radio" name="location_type" value="1"> Owned by James<br>
         <input type="radio" name="location_type" value="2" > Owned by Richard<br>
         <input type="text" name="location" placeholder="Location"><br>
