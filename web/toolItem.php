@@ -24,21 +24,20 @@ include "./db_connect.php";
         <?php
         if (isset ($_POST['part_number'])){
         //echo $partNumber;
-            echo '<table>';
-            echo '<tr><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
+
 
             foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
                 WHERE part_number = '$partNumber'")as $rows)
             {
-                echo '<tr>';
-                echo '<td>' . $rows['bushing_name'] . '</td>';
-                echo '<td>' . $rows['part_number'] . '</td>';
-                echo '<td>' . $rows['manufacturer'] . '</td>';
-                echo '<td>' . $rows['location_type'] . '</td>';
-                echo '<td>' . $rows['location'] . '</td>';
-                echo '</tr>';
+
+                echo 'Name: ' . $rows['bushing_name'] . '<br>';
+                echo 'Part Number: ' . $rows['part_number'] . '<br>';
+                echo 'Manufacturer: ' . $rows['manufacturer'] . '<br>';
+                echo 'Owner: ' . $rows['location_type'] . '<br>';
+                echo 'Location: ' . $rows['location'] . '<br>';
+                echo '<img src = "/images/' . $rows['picture_name'] . '"><br>';
             }
-            echo '</table>';
+
         }
         else {
             echo 'Part not found in database.';
