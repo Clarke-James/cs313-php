@@ -20,7 +20,7 @@ include "./navbar.php";
 </div>
 <div id="formInput">
     <p>Input new part.</p>
-    <form method="post" action="">
+    <form method="post" action="toolAdd.php">
         <input type="text" name="part_name" placeholder="Part Name"><br>
         <input type="text" name="part_number" placeholder="Part Number"><br>
         <input type="text" name="manufacturer" placeholder="Manufacturer Name"><br>
@@ -28,7 +28,7 @@ include "./navbar.php";
         <input type="radio" name="location_type" value="1"> Owned by James<br>
         <input type="radio" name="location_type" value="2" > Owned by Richard<br>
         <input type="text" name="location" placeholder="Location"><br>
-        <input type="button" name="submit" value="Submit">
+        <input type="submit" name="Add Item" formaction="toolItem.php">
     </form>
 </div>
 
