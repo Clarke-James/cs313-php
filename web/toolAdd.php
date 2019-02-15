@@ -1,6 +1,6 @@
 <?php
 include "./navbar.php";
-include "./db_connect.php";
+require "./db_connect.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,33 +18,36 @@ include "./db_connect.php";
         $partNumber = htmlspecialchars(strtoupper($_POST['part_number']));
     }
     if (isset($_POST['location_type'])) {
-        $locType = $_POST['location_type'];
+        $locType = htmlspecialchars($_POST['location_type']);
     }
     if (isset($_POST['location'])) {
-        $location = $_POST['location'];
+        $location = htmlspecialchars(strtoupper($_POST['location']));
     }
     if (isset($_POST['part_name'])) {
-        $bName = $_POST['part_name'];
+        $bName = htmlspecialchars($_POST['part_name']);
     }
     if (isset($_POST['manufacturer'])) {
-        $manufacturer = $_POST['manufacturer'];
+        $manufacturer = htmlspecialchars($_POST['manufacturer']);
     }
     if (isset($_POST['picture_name'])) {
-        $imgName = $_POST['picture_name'];
+        $imgName = htmlspecialchars($_POST['picture_name']);
     }
 
     $newId = $pdo->lastInsertId(bushing_id_seq);
 
     $stmt = $db->prepare("INSERT INTO bushings(bushing_name, part_number, manufacturer, picture_name) 
-          VALUES (:bushingName, :partNumber, :manufacturer, :pictureName) AND INSERT INTO location(bushing_id, location_type, location)
-          VALUES ('$newId',:locationType, :location)");
+          VALUES (:bushingName, :partNumber, :manufacturer, :pictureName)");
     $stmt->bindValue(':bushingName', $bName, PDO::PARAM_STR);
     $stmt->bindValue(':partNumber', $partNumber, PDO::PARAM_STR);
     $stmt->bindValue(':manufacturer', $manufacturer, PDO::PARAM_STR);
     $stmt->bindValue(':pictureName', $imgName, PDO::PARAM_STR);
-    $stmt->bindValue(':locationType', $locType, PDO::PARAM_INT);
-    $stmt->bindValue(':location', $location, PDO::PARAM_STR);
     $stmt->execute();
+
+    $stmt2 = $db->prepare("INSERT INTO location(bushing_id, location_type, location)
+          VALUES ('$newId',:locationType, :location)");
+    $stmt2->bindValue(':locationType', $locType, PDO::PARAM_INT);
+    $stmt2->bindValue(':location', $location, PDO::PARAM_STR);
+    $stmt2->execute();
 
     $newPage = "toolData.php";
     header("Location: $newPage");
