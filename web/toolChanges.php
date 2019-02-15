@@ -24,12 +24,11 @@ if (isset($_POST['bushing_id'])) {
     $bushingId = htmlspecialchars($_POST['bushing_id']);
 }
 
-$stmt = $db->prepare("UPDATE bushings SET bushing_name = :bushing_name, part_number = :part_number, 
-          manufacturer = :manufacturer, picture_name = :picture_name WHERE part_number = $partNumber");
+$stmt = $db->prepare("UPDATE bushings SET bushing_name = :bushing_name, manufacturer = :manufacturer,
+           picture_name = :picture_name WHERE part_number = $partNumber");
 $stmt->bindValue(':bushing_name', $bName, PDO::PARAM_STR);
-$stmt->bindValue(':part _number', $partNumber, PDO::PARAM_STR);
 $stmt->bindValue(':manufacturer', $manufacturer, PDO::PARAM_STR);
-$stmt->bindValue(':pictureName', $imgName, PDO::PARAM_STR);
+$stmt->bindValue(':picture_name', $imgName, PDO::PARAM_STR);
 $stmt->execute();
 
 $stmt2 = $db->prepare("UPDATE location SET location_type = :location_type, location = :location
