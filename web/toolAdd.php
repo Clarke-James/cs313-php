@@ -33,8 +33,6 @@ require "./db_connect.php";
         $imgName = htmlspecialchars($_POST['picture_name']);
     }
 
-    $newId = $pdo->lastInsertId(bushing_id_seq);
-
     $stmt = $db->prepare("INSERT INTO bushings(bushing_name, part_number, manufacturer, picture_name) 
           VALUES (:bushingName, :partNumber, :manufacturer, :pictureName)");
     $stmt->bindValue(':bushingName', $bName, PDO::PARAM_STR);
@@ -42,6 +40,8 @@ require "./db_connect.php";
     $stmt->bindValue(':manufacturer', $manufacturer, PDO::PARAM_STR);
     $stmt->bindValue(':pictureName', $imgName, PDO::PARAM_STR);
     $stmt->execute();
+
+    $newId = $pdo->lastInsertId();
 
     $stmt2 = $db->prepare("INSERT INTO location(bushing_id, location_type, location)
           VALUES ('$newId',:locationType, :location)");
