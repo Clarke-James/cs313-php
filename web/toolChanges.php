@@ -24,17 +24,20 @@ if (isset($_POST['bushing_id'])) {
     $bushingId = htmlspecialchars($_POST['bushing_id']);
 }
 
-$stmt = $db->prepare("UPDATE bushings SET :bushing_name, :part_number, :manufacturer, :picture_name 
-          WHERE part_number IS $partNumber");
-$stmt->bindValue(':bushingName', $bName, PDO::PARAM_STR);
-$stmt->bindValue(':partNumber', $partNumber, PDO::PARAM_STR);
+$stmt = $db->prepare("UPDATE bushings SET bushing_name = :bushing_name, part_number = :part_number, 
+          manufacturer = :manufacturer, picture_name = :picture_name WHERE part_number IS $partNumber");
+$stmt->bindValue(':bushing_name', $bName, PDO::PARAM_STR);
+$stmt->bindValue(':part _number', $partNumber, PDO::PARAM_STR);
 $stmt->bindValue(':manufacturer', $manufacturer, PDO::PARAM_STR);
 $stmt->bindValue(':pictureName', $imgName, PDO::PARAM_STR);
 $stmt->execute();
 
-
-$stmt2 = $db->prepare("UPDATE location SET :location_type, :location)
+$stmt2 = $db->prepare("UPDATE location SET location_type = :location_type, location = :location
           WHERE bushing_id is $bushingId");
-$stmt2->bindValue(':locationType', $locType, PDO::PARAM_INT);
+$stmt2->bindValue(':location_type', $locType, PDO::PARAM_INT);
 $stmt2->bindValue(':location', $location, PDO::PARAM_STR);
 $stmt2->execute();
+
+$newPage = "toolData.php";
+header("Location: $newPage");
+die();

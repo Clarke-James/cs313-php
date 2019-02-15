@@ -27,7 +27,7 @@ require "./db_connect.php";
         foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
                 WHERE part_number = '$partNumber'")as $rows)
         {
-            echo "Allowed Changes for part number:" . $rows['part_number'] . "<br>";
+            echo "Allowed Changes for part number: " . $rows['part_number'] . "<br>";
             echo "<form method='post' action='toolChanges.php'>";
             echo "<input type='text' name='part_name' placeholder='" . $rows['bushing_name'] . "'> Name<br>";
             echo "<input type='text' name='manufacturer' placeholder='" . $rows['manufacturer']. "'> Manufacturer<br>";
