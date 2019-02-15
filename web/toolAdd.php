@@ -34,7 +34,7 @@ include "./db_connect.php";
 
     }$  $newId = $pdo->lastInsertId(bushing_id_seq);
 
-    $stmt = $db->prepare("INSERT INTO bushing(bushing_name, part_number, manufacturer, picture_name) 
+    $stmt = $db->prepare("INSERT INTO bushings(bushing_name, part_number, manufacturer, picture_name) 
           VALUES (:bushingName, :partNumber, :manufacturer, :pictureName) AND INSERT INTO location(bushing_id, location_type, location)
           VALUES ('$newId',:locationType, :location)");
     $stmt->bindValue(':bushingName', $bName, PDO::PARAM_STR);
