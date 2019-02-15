@@ -1,19 +1,6 @@
 <?php
-include "./navbar.php";
 require "./db_connect.php";
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="navBar.css">
-    <link rel="stylesheet" type="text/css" href="toolCss.css">
-    <title>Tool Database</title>
-</head>
-<body>
 
-<div id="dbOutput">
-    <?php
     if (isset($_POST['part_number'])){
         $partNumber = htmlspecialchars(strtoupper($_POST['part_number']));
     }
@@ -52,9 +39,4 @@ require "./db_connect.php";
     $newPage = "toolData.php";
     header("Location: $newPage");
     die();
-    ?>
-</div>
-
-
-</body>
-</html>
+?>
