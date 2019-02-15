@@ -32,13 +32,15 @@ require "./db_connect.php";
         <input type="text" name="location" placeholder="Location"><br>
         <input type="submit" value="Add Item" formaction="toolAdd.php">
     </form>
+    
+    <div id="updateSearch">
+        <form method="post" action="toolUpdate.php">
+            <input type="search" name="part_number" placeholder="Update Part Number"><br>
+            <input type="submit" value="Update" formaction="toolUpdate.php">
+        </form>
+    </div>
 </div>
-<div id="updateSearch">
-    <form method="post" action="toolUpdate.php">
-        <input type="search" name="part_number" placeholder="Update Part Number"><br>
-        <input type="submit" value="Update" formaction="toolUpdate.php">
-    </form>
-</div>
+
 <div id="dbOutput">
 <?php
 
