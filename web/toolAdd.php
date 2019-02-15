@@ -31,8 +31,9 @@ include "./db_connect.php";
     }
     if (isset($_POST['picture_name'])) {
         $imgName = $_POST['picture_name'];
+    }
 
-    }$  $newId = $pdo->lastInsertId(bushing_id_seq);
+    $newId = $pdo->lastInsertId(bushing_id_seq);
 
     $stmt = $db->prepare("INSERT INTO bushings(bushing_name, part_number, manufacturer, picture_name) 
           VALUES (:bushingName, :partNumber, :manufacturer, :pictureName) AND INSERT INTO location(bushing_id, location_type, location)
