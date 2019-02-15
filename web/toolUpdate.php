@@ -29,6 +29,7 @@ require "./db_connect.php";
         {
             echo "Allowed Changes for part number: " . $rows['part_number'] . "<br>";
             echo "<form method='post' action='toolChanges.php'>";
+            echo "<input type='hidden' name='part_number' placeholder='" . $rows['part_number'] . "'>";
             echo "<input type='text' name='part_name' placeholder='" . $rows['bushing_name'] . "'> Name<br>";
             echo "<input type='text' name='manufacturer' placeholder='" . $rows['manufacturer']. "'> Manufacturer<br>";
             echo "<input type='text' name='picture_name' placeholder='" . $rows['picture_name'] . "'> Image name<br>";
