@@ -8,6 +8,7 @@ require "./db_connect.php";
     <meta name="viewport" content="width=device-width, initial-scale=1">   
     <link rel="stylesheet" type="text/css" href="navBar.css">
     <link rel="stylesheet" type="text/css" href="toolCss.css">
+    <script type="text/javascript" src="toolJS.js"></script>
     <title>Tool View</title>
 </head>
 <body>
@@ -41,6 +42,9 @@ require "./db_connect.php";
             }
             if (!$rows){
                 echo 'Part not found in database.';
+                $newPage = "toolData.php";
+                header("Location: $newPage");
+                die();
             }
         }
         ?>
