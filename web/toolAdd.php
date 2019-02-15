@@ -41,7 +41,7 @@ require "./db_connect.php";
     $stmt->bindValue(':pictureName', $imgName, PDO::PARAM_STR);
     $stmt->execute();
 
-    $newId = $pdo->lastInsertId();
+    $newId = $db->lastInsertId();
 
     $stmt2 = $db->prepare("INSERT INTO location(bushing_id, location_type, location)
           VALUES ('$newId',:locationType, :location)");
