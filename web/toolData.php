@@ -1,5 +1,6 @@
 <?php
-include "./navbar.php"; 
+include "./navbar.php";
+require "./db_connect.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,7 @@ include "./navbar.php";
 
 <div id="dbOutput">
 <?php
-require "./db_connect.php";
+
 echo '<table>';
 echo '<tr><th>Bushing ID</th><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
 
