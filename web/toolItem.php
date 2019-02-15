@@ -38,7 +38,6 @@ require "./db_connect.php";
                 echo 'Owner: ' . $rows['location_type'] . '<br>';
                 echo 'Location: ' . $rows['location'] . '<br>';
                 echo '<img src = "/images/' . $rows['picture_name'] . '"><br>';
-
             }
             if (!$rows){
                 echo 'Part not found in database.';

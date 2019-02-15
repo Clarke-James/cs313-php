@@ -27,15 +27,16 @@ require "./db_connect.php";
         foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
                 WHERE part_number = '$partNumber'")as $rows)
         {
+            echo "Allowed Changes for part number:" . $rows['part_number'] . "<br>";
             echo "<form method='post' action='toolChanges.php'>";
             echo "<input type='text' name='part_name' placeholder='" . $rows['bushing_name'] . "'> Name<br>";
-            echo "<input type='text' name='part_number' placeholder='". $rows['part_number'] . "'> Part Number<br>";
             echo "<input type='text' name='manufacturer' placeholder='" . $rows['manufacturer']. "'> Manufacturer<br>";
             echo "<input type='text' name='picture_name' placeholder='" . $rows['picture_name'] . "'> Image name<br>";
             echo "<input type='text' name='location_type' placeholder='" . $rows['location_type'] . "'> 1 = James, 2 = Richard<br>";
             echo "<input type='text' name='location' placeholder='" . $rows['location'] . "'> Location<br>";
             echo "<input type='hidden' name='bushing_id' placeholder='" . $rows['bushing_id'] . "'><br>";
             echo "<input type='submit'' value='Update Tool' formaction='toolChanges.php'>";
+            echo "<input type='submit'' value='Delete Tool' formaction='toolDelete.php'>";
             echo '</form>';
         }
         if (!$rows){
