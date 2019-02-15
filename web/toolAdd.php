@@ -1,5 +1,6 @@
 <?php
 include "./navbar.php";
+include "./db_connect.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,9 +31,23 @@ include "./navbar.php";
     }
     if (isset($_POST['picture_name'])) {
         $imgName = $_POST['picture_name'];
-    }
 
-    
+    }$  $newId = $pdo->lastInsertId(bushing_id_seq);
+
+    $stmt = $db->prepare("INSERT INTO bushing(bushing_name, part_number, manufacturer, picture_name) 
+          VALUES (:bushingName, :partNumber, :manufacturer, :pictureName) AND INSERT INTO location(bushing_id, location_type, location)
+          VALUES ('$newId',:locationType, :location)");
+    $stmt->bindValue(':bushingName', $bName, PDO::PARAM_STR);
+    $stmt->bindValue(':partNumber', $partNumber, PDO::PARAM_STR);
+    $stmt->bindValue(':manufacturer', $manufacturer, PDO::PARAM_STR);
+    $stmt->bindValue(':pictureName', $imgName, PDO::PARAM_STR);
+    $stmt->bindValue(':locationType', $locType, PDO::PARAM_INT);
+    $stmt->bindValue(':location', $location, PDO::PARAM_STR);
+    $stmt->execute();
+
+    $newPage = "toolData.php";
+    header("Location: $newPage");
+    die();
     ?>
 </div>
 
