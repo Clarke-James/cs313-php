@@ -28,14 +28,13 @@ require "./db_connect.php";
                 WHERE part_number = '$partNumber'")as $rows)
         {
             echo "<form method='post' action='toolAdd.php'>";
-            echo "<input type='text' name='part_name' placeholder='" . $rows['bushing_name'] . "'><br>";
-            echo "<input type='text' name='part_number' placeholder='". $rows['part_number'] . "'><br>";
-            echo "<input type='text' name='manufacturer' placeholder='" . $rows['manufacturer']. "><br>";
-            echo "<input type='text' name='picture_name' placeholder='" . $rows['picture_name'] . "><br>";
-            echo "<input type='radio' name='location_type' value='1'> Owned by James<br>";
-            echo "<input type='radio' name='location_type' value='2'> Owned by Richard<br>";
-            echo "<input type='text' name='location' placeholder='" . $rows['location'] . "'><br>";
-            echo "<input type='submit'' value='Add Item' formaction='toolAdd.php'>";
+            echo "<input type='text' name='part_name' placeholder='" . $rows['bushing_name'] . "'> Name<br>";
+            echo "<input type='text' name='part_number' placeholder='". $rows['part_number'] . "'> Part Number<br>";
+            echo "<input type='text' name='manufacturer' placeholder='" . $rows['manufacturer']. "> Manufacturer<br>";
+            echo "<input type='text' name='picture_name' placeholder='" . $rows['picture_name'] . "> Image name<br>";
+            echo "<input type='text' name='location_type' placeholder='" . $rows['location_type'] . "> 1 = James, 2 = Richard<br>";
+            echo "<input type='text' name='location' placeholder='" . $rows['location'] . "'> Location<br>";
+            echo "<input type='submit'' value='Update Tool' formaction='toolAdd.php'>";
             echo '</form>';
 
             //echo 'Name: ' . $rows['bushing_name'] . '<br>';
