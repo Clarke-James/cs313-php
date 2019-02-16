@@ -41,9 +41,6 @@ require "./db_connect.php";
             }
             if (!$rows){
                 echo 'Part not found in database.';
-                $newPage = "toolData.php";
-                header("Location: $newPage");
-                die();
             }
         }
         ?>
