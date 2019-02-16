@@ -2,9 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="navBar.css">
-    <link rel="stylesheet" type="text/css" href="toolCss.css">
-    <script type="text/javascript" src="toolJS.js"></script>
+
     <title>Tool View</title>
 </head>
 <body>
@@ -12,14 +10,14 @@
 require "./db_connect.php";
 
 if (isset($_POST['part_number'])){
-    $partNumber = htmlspecialchars(strtoupper($_POST['part_number']));
+    $partNumber = ($_POST['part_number']);
 }
 if (isset($_POST['location'])) {
     $location = htmlspecialchars(strtoupper($_POST['location']));
 
 }
 if (isset($_POST['bushing_id'])){
-    $bushingId = htmlspecialchars(strtoupper($_POST['bushing_id']));
+    $bushingId = ($_POST['bushing_id']);
 }
 //$bushingId = $db->prepare("SELECT bushing_id FROM bushings WHERE part_number = '$partNumber'");
 //$bushingId->execute();
