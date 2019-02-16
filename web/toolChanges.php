@@ -12,12 +12,12 @@ if (isset($_POST['location'])) {
  //   $bushingId = htmlspecialchars(strtoupper($_POST['bushing_id']));
 //}
 $bushingId = $db->prepare("SELECT bushing_id FROM bushings WHERE part_number = '$partNumber'");
-$stmt2->execute();
-
-$stmt2 = $db->prepare("UPDATE location SET location = '$location' WHERE bushing_id = '$bushingId'");
+$bushingId->execute();
+echo $bushingId;
+$stmt = $db->prepare("UPDATE location SET location = '$location' WHERE bushing_id = '$bushingId'");
 //$stmt2->bindValue(':bushingId', $bushingId, PDO::PARAM_INT);
 //$stmt2->bindValue(':location', $location, PDO::PARAM_STR);
-$stmt2->execute();
+$stmt->execute();
 
 $newPage = "toolData.php";
 header("Location: $newPage");
