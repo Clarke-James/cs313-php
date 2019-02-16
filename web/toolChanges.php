@@ -18,7 +18,7 @@ if (isset($_POST['location'])) {
 //if (isset($_POST['bushing_id'])){
  //  $bushingId = ($_POST['bushing_id']);
 //}
-$stmt = $db->prepare("SELECT bushing_id FROM bushings WHERE part_number = '$partNumber''");
+$stmt = $db->prepare("SELECT bushing_id FROM bushings WHERE part_number = '$partNumber'");
 $stmt->execute();
 $bushingId = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
