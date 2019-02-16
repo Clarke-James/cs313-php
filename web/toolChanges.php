@@ -15,12 +15,13 @@ if (isset($_POST['part_number'])){
 if (isset($_POST['location'])) {
     $location = htmlspecialchars(strtoupper($_POST['location']));
 }
-if (isset($_POST['bushing_id'])){
-   $bushingId = ($_POST['bushing_id']);
-}
-//$stmt = $db->prepare("SELECT bushing_id FROM bushings WHERE part_number = '$partNumber''");
-//$stmt->execute();
-//$bushingId = $stmt[0];
+//if (isset($_POST['bushing_id'])){
+ //  $bushingId = ($_POST['bushing_id']);
+//}
+$stmt = $db->prepare("SELECT bushing_id FROM bushings WHERE part_number = '$partNumber''");
+$stmt->execute(array(':bushing_id' => $bushingID));
+$bushingId = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 echo $bushingId;
 $stmt = $db->prepare("UPDATE location SET location = '$location' WHERE bushing_id = $bushingId");
 $stmt->execute();
