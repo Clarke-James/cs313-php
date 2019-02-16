@@ -35,15 +35,15 @@ require "./db_connect.php";
 
     <div id="updateSearch">
         <form method="post" action="toolUpdate.php">
-            <input type="search" name="part_number" placeholder="Update Part Number"><br>
-            <input type="submit" value="Update" formaction="toolUpdate.php">
+            <p>Update location or Delete bushings.</p>
+            <input type="search" name="part_number" placeholder="Search by Part Number"><br>
+            <input type="submit" value="Update location" formaction="toolUpdate.php">
         </form>
     </div>
 </div>
 
 <div id="dbOutput">
 <?php
-
 echo '<table>';
 echo '<tr><th>Bushing ID</th><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
 
@@ -59,11 +59,7 @@ foreach ($db->query('SELECT * FROM bushings AS b  JOIN location AS l ON b.bushin
     echo '</tr>';
 }
 echo '</table>'
-
 ?>
-
 </div>
-
-
 </body>
 </html>
