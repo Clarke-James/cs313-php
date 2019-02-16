@@ -24,7 +24,7 @@ if (isset($_POST['bushing_id'])) {
 }
 
 $stmt = $db->prepare("UPDATE bushings SET bushing_name = :bushingName, manufacturer = :manufacturer, 
-      picture_name = :pictureName WHERE part_number = ':partNumber'");
+      picture_name = :pictureName WHERE part_number = :partNumber");
 $stmt->bindValue(':bushingName', $bName, PDO::PARAM_STR);
 $stmt->bindValue(':partNumber', $partNumber, PDO::PARAM_STR);
 $stmt->bindValue(':manufacturer', $manufacturer, PDO::PARAM_STR);
@@ -32,7 +32,7 @@ $stmt->bindValue(':pictureName', $imgName, PDO::PARAM_STR);
 $stmt->execute();
 
 $stmt2 = $db->prepare("UPDATE location SET location_type = :locationType, location = :location
-      WHERE bushing_id = ':bushingId'");
+      WHERE bushing_id = :bushingId");
 $stmt2->bindValue(':bushingId', $bushingId, PDO::PARAM_INT);
 $stmt2->bindValue(':locationType', $locType, PDO::PARAM_INT);
 $stmt2->bindValue(':location', $location, PDO::PARAM_STR);
