@@ -33,7 +33,7 @@ require "./db_connect.php";
             echo "<form method='post' action='toolChanges.php'>";
             echo "<input type='hidden' name='part_number' placeholder='" . $rows['part_number'] . "'><br>";
             echo "<input type='text' name='location' placeholder='" . $rows['location'] . "'> Location<br>";
-            echo "<input type='hidden' name='bushing_id' placeholder='" . $rows['bushing_id'] . "'><br>";
+            echo "<input type='text' name='bushing_id' placeholder='" . $rows['bushing_id'] . "'><br>";
             echo "<input type='submit'' value='Update Location' formaction='toolChanges.php'>";
             echo "<input type='submit'' value='Delete Tool' formaction='toolDelete.php'>";
             echo '</form>';
