@@ -22,7 +22,7 @@ $stmt = $db->prepare("SELECT bushing_id FROM bushings WHERE part_number = '$part
 $stmt->execute();
 $bushingId = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo "bushing Id is : " . $bushingId['bushing_id'];
+echo "bushing Id is : " . $var_dump($bushingId);
 $stmt = $db->prepare("UPDATE location SET location = '$location' WHERE bushing_id = $bushingId");
 $stmt->execute();
 
