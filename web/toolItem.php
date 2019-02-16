@@ -49,7 +49,7 @@ require "./db_connect.php";
     
     <?php
     if (isset ($_POST['location_type'])){
-        echo $locType;
+
     echo '<table>';
     echo '<tr><th>Bushing ID</th><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
 
