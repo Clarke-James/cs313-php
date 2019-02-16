@@ -1,5 +1,4 @@
 <?php
-include "./navbar.php";
 require "./db_connect.php";
 
 if (isset($_POST['part_number'])){
@@ -24,10 +23,10 @@ if (isset($_POST['bushing_id'])) {
     $bushingId = htmlspecialchars($_POST['bushing_id']);
 }
 
-$stmt = $db->prepare("UPDATE bushings SET bushing_name = $bName, manufacturer = $manufacturer, picture_name = $imgName WHERE part_number = $partNumber");
+$stmt = $db->prepare("UPDATE bushings SET bushing_name = '$bName', manufacturer = '$manufacturer', picture_name = '$imgName' WHERE part_number = '$partNumber'");
 $stmt->execute();
 
-$stmt2 = $db->prepare("UPDATE location SET location_type = $locType, location = $location WHERE bushing_id = $bushingId");
+$stmt2 = $db->prepare("UPDATE location SET location_type = '$locType', location = '$location' WHERE bushing_id = '$bushingId'");
 $stmt2->execute();
 
 $newPage = "toolData.php";
