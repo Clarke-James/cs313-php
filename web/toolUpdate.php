@@ -32,13 +32,9 @@ require "./db_connect.php";
             echo "Allowed Changes for part number: " . $rows['part_number'] . "<br>";
             echo "<form method='post' action='toolChanges.php'>";
             echo "<input type='hidden' name='part_number' placeholder='" . $rows['part_number'] . "'><br>";
-            echo "<input type='text' name='part_name' placeholder='" . $rows['bushing_name'] . "'> Name<br>";
-            echo "<input type='text' name='manufacturer' placeholder='" . $rows['manufacturer']. "'> Manufacturer<br>";
-            echo "<input type='text' name='picture_name' placeholder='" . $rows['picture_name'] . "'> Image name<br>";
-            echo "<input type='text' name='location_type' placeholder='" . $rows['location_type'] . "'> 1 = James, 2 = Richard<br>";
             echo "<input type='text' name='location' placeholder='" . $rows['location'] . "'> Location<br>";
             echo "<input type='hidden' name='bushing_id' placeholder='" . $rows['bushing_id'] . "'><br>";
-            echo "<input type='submit'' value='Update Tool' formaction='toolChanges.php'>";
+            echo "<input type='submit'' value='Update Location' formaction='toolChanges.php'>";
             echo "<input type='submit'' value='Delete Tool' formaction='toolDelete.php'>";
             echo '</form>';
         }
