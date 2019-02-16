@@ -22,7 +22,7 @@ if (isset($_POST['bushing_id'])){
 //$stmt = $db->prepare("SELECT bushing_id FROM bushings WHERE part_number = '$partNumber''");
 //$stmt->execute();
 //$bushingId = $stmt[0];
-echo "$bushingId";
+echo $bushingId;
 //$stmt = $db->prepare("UPDATE location SET location = '$location' WHERE bushing_id = $bushingId");
 //$stmt2->bindValue(':bushingId', $bushingId, PDO::PARAM_INT);
 //$stmt2->bindValue(':location', $location, PDO::PARAM_STR);
