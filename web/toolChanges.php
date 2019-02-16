@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="navBar.css">
+    <link rel="stylesheet" type="text/css" href="toolCss.css">
+    <script type="text/javascript" src="toolJS.js"></script>
+    <title>Tool View</title>
+</head>
+<body>
 <?php
 require "./db_connect.php";
 
@@ -22,3 +32,6 @@ $stmt->execute();
 $newPage = "toolData.php";
 header("Location: $newPage");
 die();
+?>
+</body>
+</html>
