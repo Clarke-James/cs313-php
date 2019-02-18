@@ -11,7 +11,8 @@ if (isset($_POST['bushing_id'])){
    $bushingId = ($_POST['bushing_id']);
 }
 
-$stmt = $db->prepare("UPDATE location SET location = '$location' WHERE bushing_id = $bushingId");
+$stmt = $db->prepare("UPDATE location SET location = ':location' WHERE bushing_id = $bushingId");
+$stmt->bindValue(':location', $location, PDO::PARAM_STR);
 $stmt->execute();
 
 $newPage = "toolData.php";
