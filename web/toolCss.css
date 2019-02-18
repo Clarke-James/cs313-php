@@ -27,7 +27,7 @@ body {
     font-size: medium;
 }
 #dbOutput{
-    position: absolute;
+    position: relative;
     top: 125px;
     left: 20px;
 }
