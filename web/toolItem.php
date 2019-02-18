@@ -19,6 +19,7 @@ require "./db_connect.php";
     }
     ?>
     <div id="searchOutput">
+        <p id="partLocated">
         <?php
         if (isset ($_POST['part_number'])){
 
@@ -42,6 +43,7 @@ require "./db_connect.php";
         }
         ?>
         <a href="toolData.php" class="button">Return to Main</a>
+        </p>
     </div>
 </body>
 </html>
