@@ -30,11 +30,11 @@ require "./db_connect.php";
                 WHERE part_number = '$partNumber'")as $rows)
             {
 
-                echo 'Name: ' . $rows['bushing_name'] . '<br>';
-                echo 'Part Number: ' . $rows['part_number'] . '<br>';
+                echo 'Name:          ' . $rows['bushing_name'] . '<br>';
+                echo 'Part Number:  ' . $rows['part_number'] . '<br>';
                 echo 'Manufacturer: ' . $rows['manufacturer'] . '<br>';
-                echo 'Owner: ' . $rows['location_type'] . '<br>';
-                echo 'Location: ' . $rows['location'] . '<br>';
+                echo 'Owner:        ' . $rows['location_type'] . '<br>';
+                echo 'Location:      ' . $rows['location'] . '<br>';
                 echo '<img id="bushings" src = "/images/' . $rows['picture_name'] . '"><br>';
             }
             if (!$rows){
