@@ -35,6 +35,10 @@ body {
 #searchOutput{
     font-family: Lucida Console, Monaco, monospace;
     font-size: medium;
+    position: relative;
+    top: 20px;
+    left: 5px;
+    padding: 20px;
 }
 input[type=text]:focus {
     border: 3px solid #555;
