@@ -29,7 +29,7 @@ body {
 #dbOutput{
     position: absolute;
     top: 125px;
-    left: 150px;
+    left: 20px;
 }
 
 input[type=text]:focus {
