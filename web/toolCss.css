@@ -28,8 +28,9 @@ body {
 }
 #dbOutput{
     position: relative;
-    top: 125px;
-    left: 20px;
+    top: 50px;
+    left: 5px;
+    padding: 20px;
 }
 
 input[type=text]:focus {
