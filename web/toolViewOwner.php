@@ -19,7 +19,7 @@ require "./db_connect.php";
             $locType = $_POST['location_type'];
         }
         echo '<table>';
-        echo '<tr><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location Type</th><th>Location</th></tr>';
+        echo '<tr><th>Bushing Name</th><th>Part Number </th><th>Manufacturer</th><th>Location</th></tr>';
 
         foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
           WHERE location_type = '$locType'")as $row)
@@ -28,7 +28,6 @@ require "./db_connect.php";
             echo '<td>' . $row['bushing_name'] . '</td>';
             echo '<td>' . $row['part_number'] . '</td>';
             echo '<td>' . $row['manufacturer'] . '</td>';
-            echo '<td>' . $row['location_type'] . '</td>';
             echo '<td>' . $row['location'] . '</td>';
             echo '</tr>';
         }

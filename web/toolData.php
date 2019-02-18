@@ -12,9 +12,9 @@ require "./db_connect.php";
     <title>Tool Database</title>
 </head>
 <body>
-
+<div id="title">
     <h1>Bushings for Pens</h1>
-
+</div>
     <div id="formSearch">
         <form method="post" action="toolItem.php">
             <input type="search" name="part_number" placeholder="Search Part Number"><br>

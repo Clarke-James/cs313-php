@@ -1,107 +1,122 @@
-body {
-    background-color: burlywood;
-}
 
-#formSearch{
-    position: relative;
-    top: 25px;
-    left: 50px;
-    font-size: medium;
-}
-#formOwner{
-    position: relative;
-    top: 50px;
-    left: 50px;
-    font-size: medium;
-}
-#formInput{
-    position: relative;
-    top: 50px;
-    left: 50px;
-    font-size: medium;
-}
-#formUpdate{
-    position: relative;
-    top: 60px;
-    left: 50px;
-    font-size: medium;
-}
-#dbOutput{
-    position: relative;
-    top: 50px;
-    left: 5px;
-    padding: 20px;
-}
-#searchOutput{
-    font-family: Lucida Console, Monaco, monospace;
-    font-size: medium;
-    text-align: center;
-    position: relative;
-    top: 20px;
-    left: 5px;
-    padding: 20px;
-}
-input[type=text]:focus {
-    border: 3px solid #555;
-}
 
-input[type=text]{
-    width: 75%;
-    margin: 8px 2px;
-    border: 1px solid #ccc;
-    padding: 12px 20px;
-    border-radius: 4px;
-    resize: vertical;
-    font-size: medium;
-}
-input[type=search]:focus {
-    border: 3px solid #555;
-}
+    body {
+        background-color: burlywood;
+    }
 
-input[type=search]{
-    width: 75%;
-    margin: 8px 2px;
-    border: 1px solid #ccc;
-    padding: 12px 20px;
-    border-radius: 4px;
-    resize: vertical;
-    font-size: medium;
-}
+    #formSearch {
+        position: relative;
+        top: 25px;
+        left: 50px;
+        font-size: medium;
+    }
 
-table {
-    border-collapse: collapse;
-}
+    #formOwner {
+        position: relative;
+        top: 50px;
+        left: 50px;
+        font-size: medium;
+    }
 
-table, td, th {
-    border: 1px solid black;
-    text-align: center;
-    padding: 15px;
-}
+    #formInput {
+        position: relative;
+        top: 50px;
+        left: 50px;
+        font-size: medium;
+    }
 
-th {
-    height: 25px;
-}
+    #formUpdate {
+        position: relative;
+        top: 60px;
+        left: 50px;
+        font-size: medium;
+    }
 
-#bushings {
-    border: 1px solid darkblue;
-    border-radius: 4px;
-    padding: 5px;
-    width: 250px;
-}
+    #dbOutput {
+        position: relative;
+        top: 50px;
+        left: 5px;
+        padding: 20px;
+    }
 
-.button {
-  background-color: darkblue;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 75%;
-}
-.buttonView{
-    width: 58%;
-}
+    #searchOutput {
+        font-family: Lucida Console, Monaco, monospace;
+        font-size: medium;
+        text-align: center;
+        position: relative;
+        top: 20px;
+        left: 5px;
+        padding: 20px;
+    }
+
+    input[type=text]:focus {
+        border: 3px solid #555;
+    }
+
+    input[type=text] {
+        width: 300px;
+        margin: 8px 2px;
+        border: 1px solid #ccc;
+        padding: 12px 20px;
+        border-radius: 4px;
+        resize: vertical;
+        font-size: medium;
+    }
+
+    input[type=search]:focus {
+        border: 3px solid #555;
+    }
+
+    input[type=search] {
+        width: 300px;
+        margin: 8px 2px;
+        border: 1px solid #ccc;
+        padding: 12px 20px;
+        border-radius: 4px;
+        resize: vertical;
+        font-size: medium;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table, td, th {
+        border: 1px solid black;
+        text-align: center;
+        padding: 15px;
+    }
+
+    th {
+        height: 25px;
+    }
+
+    #bushings {
+        border: 1px solid darkblue;
+        border-radius: 4px;
+        padding: 5px;
+        width: 300px;
+    }
+
+    .button {
+        background-color: darkblue;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 300px;
+    }
+
+    .buttonView {
+        width: 240px;
+    }
+    #title {
+        text-align: center;
+        text-transform: uppercase;
+        color:blue;
+    }

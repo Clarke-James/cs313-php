@@ -29,7 +29,7 @@ require "./db_connect.php";
             echo "<input type='hidden' name='part_number' value='" . $rows['part_number'] . "'><br>";
             echo "<input type='text' name='location'  placeholder='" . $rows['location'] . "'> Location<br>";
             echo "<input type='hidden' name='bushing_id' value='" . $rows['bushing_id'] . "'><br>";
-            echo "<input type='submit'' value='Update Location' formaction='toolChanges.php'>  ";
+            echo "<input type='submit'' value='Update Location' formaction='toolChanges.php'><br>";
             echo "<input type='submit'' value='Delete Tool' formaction='toolDelete.php'>";
             echo '</form>';
             }
