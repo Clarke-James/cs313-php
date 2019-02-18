@@ -18,16 +18,16 @@ require "./db_connect.php";
     <div id="formSearch">
         <form method="post" action="toolItem.php">
             <input type="search" name="part_number" placeholder="Search Part Number"><br>
-            <input type="submit" value="Search" formaction="toolItem.php">
+            <input class="button" type="submit" value="Search" formaction="toolItem.php">
         </form>
-        <a href="toolAllData.php" class="button">View All Items</a>
+        <a href="toolAllData.php" class="button buttonView">View Database</a>
     </div>
 
     <div id="formOwner">
         <form method="post" action="toolViewOwner.php">
             <input type="radio" name="location_type" value="1"> Show all owned by James<br>
             <input type="radio" name="location_type" value="2" > Show all owned by Richard<br>
-            <input type="submit" value="Search" formaction="toolViewOwner.php">
+            <input class="button" type="submit" value="Show Owned" formaction="toolViewOwner.php">
         </form>
     </div>
 
@@ -41,15 +41,15 @@ require "./db_connect.php";
             <input type="radio" name="location_type" value="1"> Owned by James<br>
             <input type="radio" name="location_type" value="2" > Owned by Richard<br>
             <input type="text" name="location" placeholder="Location"><br>
-            <input type="submit" value="Add Item" formaction="toolAdd.php">
+            <input class="button" type="submit" value="Add Item" formaction="toolAdd.php">
         </form>
     </div>
 
-    <div id="updateSearch">
+    <div id="formUpdate">
         <form method="post" action="toolUpdate.php">
             <p>Update location or Delete bushings.</p>
             <input type="search" name="part_number" placeholder="Search by Part Number"><br>
-            <input type="submit" value="Update location" formaction="toolUpdate.php">
+            <input class="button" type="submit" value="Update location" formaction="toolUpdate.php">
         </form>
     </div>
 
