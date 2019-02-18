@@ -24,13 +24,13 @@ require "./db_connect.php";
         if (isset ($_POST['part_number'])){
             foreach ($db->query("SELECT * FROM bushings AS b  JOIN location AS l ON b.bushing_id = l.bushing_id 
                 WHERE part_number = '$partNumber'")as $rows) {
-            echo "Change location or delete part number: " . $rows['part_number'] . "<br>";
+            echo "Part Number to edit: " . $rows['part_number'] . "<br>";
             echo "<form method='post' action='toolChanges.php'>";
             echo "<input type='hidden' name='part_number' value='" . $rows['part_number'] . "'><br>";
-            echo "<input type='text' name='location'  placeholder='" . $rows['location'] . "'> Location<br>";
+            echo "<input type='text' name='location'  placeholder='" . $rows['location'] . "'><br>";
             echo "<input type='hidden' name='bushing_id' value='" . $rows['bushing_id'] . "'><br>";
-            echo "<input type='submit'' value='Update Location' formaction='toolChanges.php'><br>";
-            echo "<input type='submit'' value='Delete Tool' formaction='toolDelete.php'>";
+            echo "<input class='button' type='submit'' value='Update Location' formaction='toolChanges.php'><br>";
+            echo "<input class='button' type='submit'' value='Delete Part Number from database' formaction='toolDelete.php'>";
             echo '</form>';
             }
 
