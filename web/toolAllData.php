@@ -30,7 +30,7 @@ require "./db_connect.php";
         }
         echo '</table>'
         ?>
-        <a href="toolData.php" class="button">Return to Main</a>
+        <a href="toolData.php" class="button buttonView">Return to Main</a>
     </div>
 </body>
 </html>
