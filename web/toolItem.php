@@ -38,7 +38,7 @@ require "./db_connect.php";
                 echo '<img id="bushings" src = "/images/' . $rows['picture_name'] . '"><br>';
             }
             if (!$rows){
-                echo 'Part not found in database.';
+                echo 'Part not found in database.<br>';
             }
         }
         ?>
