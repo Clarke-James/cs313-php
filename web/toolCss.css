@@ -3,7 +3,7 @@
     body {
         background-color: burlywood;
         /*https://trickvilla.com/wp-content/uploads/Light-Wood-Background.jpg*/
-        background-image: url(Light-Wood-Background.jpg);
+        background-image: url(Light-Wood-Backgroundb.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
@@ -52,8 +52,6 @@
         top: 50px;
         left: 5px;
         padding: 20px;
-        background-color: #ffffff;
-        opacity: 0.6;
     }
 
     #searchOutput {
