@@ -34,13 +34,13 @@ require "./db_connect.php";
     <div id="formInput">
         <p>Input new part.</p>
         <form method="post" action="toolAdd.php">
-            <input type="text" name="part_name" placeholder="Part Name"><br>
-            <input type="text" name="part_number" placeholder="Part Number"><br>
+            <input required type="text" name="part_name" placeholder="Part Name"><br>
+            <input required type="text" name="part_number" placeholder="Part Number"><br>
             <input type="text" name="manufacturer" placeholder="Manufacturer Name"><br>
             <input type="text" name="picture_name" placeholder="Image Name (part number.jpg)"><br>
             <input type="radio" name="location_type" value="1"> Owned by James<br>
             <input type="radio" name="location_type" value="2" > Owned by Richard<br>
-            <input type="text" name="location" placeholder="Location"><br>
+            <input required type="text" name="location" placeholder="Location"><br>
             <input class="button" type="submit" value="Add Item" formaction="toolAdd.php">
         </form>
     </div>
