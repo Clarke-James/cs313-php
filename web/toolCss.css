@@ -2,13 +2,12 @@
 
     body {
         background-color: burlywood;
+        /*https://trickvilla.com/wp-content/uploads/Light-Wood-Background.jpg*/
         background-image: url(Light-Wood-Background.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
-        background-opacity:65%;
-        filter: alpha(opacity=65);
     }
 
     #formSearch {
@@ -21,6 +20,7 @@
     }
 
     #formOwner {
+
         font-family: Lucida Console, Monaco, monospace;
         text-align: left;
         position: relative;
@@ -48,6 +48,7 @@
     }
 
     #dbOutput {
+        text-decoration-color: white;
         position: relative;
         top: 50px;
         left: 5px;
