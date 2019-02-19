@@ -8,9 +8,6 @@ nav {
     font-family: Lucida Console, Monaco, monospace;
     font-size:20px;
     overflow:hidden;
-    top: 0;
-    position:fixed;
-    width: 100%;
 }
 nav ul {
     padding:0;

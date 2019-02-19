@@ -12,6 +12,7 @@ require "./db_connect.php";
     <title>Tool Database</title>
 </head>
 <body>
+
 <div id="title">
     <h1>Bushings for Pens</h1>
 </div>
@@ -52,6 +53,5 @@ require "./db_connect.php";
             <input class="button" type="submit" value="Update location" formaction="toolUpdate.php">
         </form>
     </div>
-
 </body>
 </html>
