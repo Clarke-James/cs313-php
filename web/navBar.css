@@ -6,9 +6,10 @@ a {
 nav {
     background-color: gray;
     font-family: Lucida Console, Monaco, monospace;
-    font-size:25px;
+    font-size:20px;
     overflow:hidden;
     padding-left:4%;
+    position:fixed;
 }
 nav ul {
     padding:0;
