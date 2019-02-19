@@ -35,7 +35,7 @@ require "./db_connect.php";
             }
 
         if (!$rows){
-            echo 'Part not found in database.';
+            echo 'Part not found in database.<br>';
         }
     }
     ?>
