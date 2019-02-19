@@ -7,6 +7,8 @@
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
+        background-opacity:65%;
+        filter: alpha(opacity=65);
     }
 
     #formSearch {
