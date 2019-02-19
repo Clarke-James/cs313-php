@@ -8,6 +8,8 @@
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
     }
 
     #formSearch {
@@ -20,7 +22,6 @@
     }
 
     #formOwner {
-
         font-family: Lucida Console, Monaco, monospace;
         text-align: left;
         position: relative;
@@ -98,7 +99,6 @@
     }
 
     table, td, th {
-        color:white;
         border: 1px solid black;
         text-align: center;
         padding: 15px;
