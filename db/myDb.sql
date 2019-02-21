@@ -1,6 +1,6 @@
 -- Create table.
 CREATE TABLE bushings
-( bushing_id       INT
+( bushing_id       SERIAL
 , bushing_name     VARCHAR(255)   NOT NULL
 , part_number      VARCHAR(255)   NOT NULL
 , manufacturer     VARCHAR(255)  
@@ -13,7 +13,7 @@ CREATE TABLE bushings
 CREATE SEQUENCE bushing_id_s1 START WITH 1001;
 
 CREATE TABLE location
-( location_id    INT
+( location_id    SERIAL
 , bushing_id     INT        NOT NULL
 , location_type  INT        
 , location       VARCHAR(255)
