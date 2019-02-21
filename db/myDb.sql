@@ -1,6 +1,6 @@
 -- Create table.
 CREATE TABLE bushings
-( bushing_id       INT
+( bushing_id       SERIAL
 , bushing_name     VARCHAR(255)   NOT NULL
 , part_number      VARCHAR(255)   NOT NULL
 , manufacturer     VARCHAR(255)  
@@ -10,10 +10,10 @@ CREATE TABLE bushings
 );  
 
 -- Create sequence.
-CREATE SEQUENCE bushing_id_s1 START WITH 1001;
+DELETE SEQUENCE bushing_id_s1 START WITH 1001;
 
 CREATE TABLE location
-( location_id    INT
+( location_id    SERIAL
 , bushing_id     INT        NOT NULL
 , location_type  INT        
 , location       VARCHAR(255)
@@ -25,20 +25,53 @@ CREATE SEQUENCE location_id_s1 START WITH 1001;
 
 -- test database
 INSERT INTO bushings
-( bushing_id
-, bushing_name
+( bushing_name
 , part_number
 , manufacturer
-, picture_name
 )
-VALUES (1, 'Power Pen Pencil', 'PK-POWER-BU', 'Penn State Ind',  'powerpen.jpg');
+VALUES ('Power Pen Pencil', 'PK-POWER-BU', 'Penn State Ind');
+VALUES ('Combo pen pencil', '155-5100', 'Woodcraft');
+VALUES ('Slimline Pro', 'PK-PENXXBU', 'Penn State Ind');
+VALUES ('Classic American', 'ARTISIAN', 'Craft Supplies USA');
+
+INSERT INTO location
+( bushing_id 
+, location_type
+, location
+)
+VALUES (1 ,1, '11-B1');
+INSERT INTO location
+( bushing_id 
+, location_type
+, location
+)
+VALUES (2, 1, '11-A1');
+INSERT INTO location
+( bushing_id 
+, location_type
+, location
+)
+VALUES (3, 1, '11-C1');
+INSERT INTO location
+( bushing_id 
+, location_type
+, location
+)
+VALUES (4, 2, '1-D1');
+
 
 SELECT * FROM bushings
 ORDER BY bushing_id;
 
 SELECT * FROM location
-ORDER BY location_id;
+ORDER BY bushing_id;
 
+ALTER TABLE location 
+DROP COLUMN location_id;
 
 DROP TABLE bushings;
 DROP TABLE location;
+
+SELECT * FROM bushings AS b
+JOIN location AS l
+ON b.bushing_id = l.bushing_id;
